@@ -137,3 +137,18 @@ button:hover {
         transform: rotate(360deg);
     }
 }
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.btn-load {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+}

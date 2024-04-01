@@ -1,10 +1,10 @@
-export const gallery = document.querySelector(".gallery");
-
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+
+export const gallery = document.querySelector(".gallery");
 
 export function templateImg(data) {
 if (data.length == 0) {
@@ -19,9 +19,13 @@ if (data.length == 0) {
     });
 } else {
     const markup = data.map((photo) => {
-        return `<li class="photos-list-item">
+    return `<li class="photos-list-item">
         <a class="photos-list-link" href="${photo.largeImageURL}">
-        <img class="photo" src="${photo.webformatURL}" alt="${photo.tags}"/>
+        <img
+        loading="lazy"
+        class="photo"
+        src="${photo.webformatURL}" 
+        alt="${photo.tags}"/>
         </a>
         <ul class="photo-information-container">
         <li class="item-photo-information-container"><p><span class="accent">Likes</span></br>${photo.likes}</p></li>
@@ -31,13 +35,13 @@ if (data.length == 0) {
         </ul>
         </li>`;
     })
-        .join("");
-        gallery.insertAdjacentHTML("beforeend", markup);
+    .join("");
+    gallery.insertAdjacentHTML("beforeend", markup);
     lightbox.refresh();
-}
-}
+    }
+};
 
  const lightbox = new SimpleLightbox('.photos-list-link', {
-        captionsData: 'alt',
-        captionDelay: 250,
+    captionsData: 'alt',
+    captionDelay: 250,
  });
