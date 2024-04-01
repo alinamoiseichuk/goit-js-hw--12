@@ -1,0 +1,139 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+    margin-bottom: 32px;
+}
+
+.form input {
+    width: 272px;
+    height: 40px;
+    padding-left: 16px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    outline: none;
+    margin-right: 8px;
+}
+
+.form input::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #808080;
+}
+
+.form input:hover {
+    border: 1px solid #000;
+}
+
+.form input:focus {
+    border: 1px solid #4e75ff;
+}
+
+button {
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 91px;
+    height: 40px;
+    background-color: #4e75ff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6c8cff;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 156px;
+    padding-right: 156px;
+}
+
+.photo {
+    border: 1px solid #808080;
+    width: 360px;
+    height: 200px;
+}
+
+.photos-list-item {
+    width: calc((100% - 48px) / 3);
+}
+
+.photo-information-container {
+    display: flex;
+    column-gap: 28px;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-photo-information-container {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+    text-align: center;
+}
+
+.accent {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33333;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-width: 3px;
+    border-style: dashed solid solid dotted;
+    border-color: #ff3d00 #ff3d00 transparent #ff3d00;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    display: block;
+    margin: 0 auto;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 20px;
+    top: 31px;
+    border: 10px solid transparent;
+    border-right-color: #ff3d00;
+    transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
