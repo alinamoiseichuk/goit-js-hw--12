@@ -48,7 +48,6 @@ async function handleSubmit(event) {
     hideLoader();
 };
 
-  
 btnLoadMore.addEventListener("click", onLoadMoreClick);
 
 async function onLoadMoreClick() {
