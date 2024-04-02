@@ -7,19 +7,8 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 export const gallery = document.querySelector(".gallery");
 
 export function templateImg(data) {
-if (data.length == 0) {
-    iziToast.error({
-        message: 'Sorry, there are no images matching your search query. Please try again!',
-        theme: 'dark',
-        progressBarColor: '#FFFFFF',
-        color: '#EF4040',
-        position: 'topRight',
-        width: '432px',
-        height: '88px',
-    });
-} else {
     const markup = data.map((photo) => {
-    return `<li class="photos-list-item">
+        return `<li class="photos-list-item">
         <a class="photos-list-link" href="${photo.largeImageURL}">
         <img
         loading="lazy"
@@ -35,13 +24,12 @@ if (data.length == 0) {
         </ul>
         </li>`;
     })
-    .join("");
-    gallery.insertAdjacentHTML("beforeend", markup);
+        .join("");
+        gallery.insertAdjacentHTML("beforeend", markup);
     lightbox.refresh();
-    }
 };
 
  const lightbox = new SimpleLightbox('.photos-list-link', {
-    captionsData: 'alt',
-    captionDelay: 250,
+        captionsData: 'alt',
+        captionDelay: 250,
  });
