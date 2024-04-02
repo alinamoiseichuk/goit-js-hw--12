@@ -43,7 +43,7 @@ async function handleSubmit(event) {
         }
         form.reset();  
     } catch(error) {
-        console.log("error");
+        console.error(error);
     }; 
     hideLoader();
 };
@@ -55,22 +55,14 @@ async function onLoadMoreClick() {
     currentPage += 1;
     showLoader();
 try {
-     const data = await getImages(value, currentPage);
+    const data = await getImages(value, currentPage);
     templateImg(data.hits);
 
     myScroll();
     checkBtnStatus();
 
-    if(currentPage >= maxPage)
-    iziToast.info({
-        message: "We're sorry, but you've reached the end of search results",
-        color: "blue",
-        position: "topRight",
-        theme: "light",
-        progressBarColor: '#FFFFFF',
-    });
 } catch (error) {
-    console.log("error")
+    console.error(error);
     };
     hideLoader();
 };
@@ -102,9 +94,16 @@ function hideLoadMore() {
 function checkBtnStatus() {
     if (currentPage >= maxPage) {
         hideLoadMore();
+        iziToast.info({
+            message: "We're sorry, but you've reached the end of search results",
+            color: "blue",
+            position: "topRight",
+            theme: "light",
+            progressBarColor: '#FFFFFF',
+        });
     } else {
         showLoadMore();
-    }
+    };
 };
 
 

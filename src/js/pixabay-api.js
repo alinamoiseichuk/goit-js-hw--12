@@ -16,7 +16,7 @@ const params = new URLSearchParams({
         const res = await axios.get(BASE_URL, { params });
         return res.data;
     } catch (error) {
-        console.log("error");
+        console.error(error);
     };
 };
 
